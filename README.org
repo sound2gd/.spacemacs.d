@@ -1,0 +1,28 @@
+* 自用spacemacs配置
+
+** 大多抄袭自 [[https://github.com/zilongshanren/spacemacs-private][子龙山人的配置]]
+
+** 日常技术栈
+
+   针对这些技术栈优化配置，符合自己最佳的习惯
+*** 前端
+
+    - JS/Css/Html
+    - React
+    - React-Native
+    - Vue
+
+*** 后端
+
+    - Java
+    - Kotlin
+    - Clojure
+    - Golang
+    - NodeJs
+
+*** 杂项
+
+    - org-mode
+    - Python
+    - Bash/Zsh
+    - Alfred Workflow
