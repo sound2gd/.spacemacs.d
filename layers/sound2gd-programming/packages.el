@@ -168,6 +168,10 @@
               (lambda ()
                 (setq imenu-create-index-function 'css-imenu-make-index)))))
 
+
+(defun sound2gd-programming/init-tagedit ()
+  (use-package tagedit))
+
 (defun sound2gd-programming/post-init-tagedit ()
   (add-hook 'web-mode-hook (lambda () (tagedit-mode 1))))
 
