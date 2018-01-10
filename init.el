@@ -53,7 +53,10 @@ values."
      (gtags :disabled-for clojure emacs-lisp javascript latex python shell-scripts)
      (shell :variables shell-default-shell 'eshell)
      markdown
-     (org :variables org-want-todo-bindings t)
+     (org :variables
+          org-want-todo-bindings t
+          org-enable-reveal-js-support t
+          org-projectile-file "/Users/cris/Dropbox/gtd/gtd.org")
      yaml
      react
      (python :variables
@@ -405,6 +408,10 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(evil-want-Y-yank-to-eol t)
+ '(org-agenda-files
+   (quote
+    ("~/Dropbox/gtd/gtd.org" "~/Dropbox/gtd/rn-lib.org")))
  '(package-selected-packages
    (quote
     (yapfify persp-mode helm-flx doom-themes cmake-mode ace-link lua-mode helm helm-core yasnippet org-plus-contrib magit async cider evil goto-chg zenburn-theme youdao-dictionary yaml-mode xterm-color ws-butler winum which-key web-mode web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package unfill undo-tree treemacs-projectile treemacs-evil toc-org tide tagedit symon stylus-mode string-inflection ssass-mode spaceline smeargle slim-mode shell-pop scss-mode sayid sass-mode reveal-in-osx-finder restart-emacs realgud rainbow-mode rainbow-identifiers rainbow-delimiters queue pyvenv pytest pyenv-mode py-isort pug-mode popwin pip-requirements pcre2el pbcopy password-generator paradox overseer osx-trash osx-dictionary origami orgit org-projectile org-present org-pomodoro org-download org-bullets org-brain open-junk-file obsidian-theme nord-theme nlinum-relative nameless mwim multi-term move-text mmm-mode material-theme markdown-toc magit-gitflow macrostep lorem-ipsum livid-mode live-py-mode link-hint launchctl json-mode js2-refactor js-doc info+ indent-guide impatient-mode ibuffer-projectile hy-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-mode-manager helm-make helm-gtags helm-gitignore helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag google-translate google-c-style golden-ratio godoctor go-tag go-rename go-guru go-eldoc gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-commit ghub gh-md ggtags fuzzy flyspell-correct-helm flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eshell-z eshell-prompt-extras esh-help engine-mode emmet-mode elisp-slime-nav editorconfig dumb-jump disaster diminish cython-mode company-web company-tern company-statistics company-lua company-go company-c-headers company-anaconda column-enforce-mode color-identifiers-mode coffee-mode cmake-ide clojure-snippets clojure-cheatsheet clj-refactor clean-aindent-mode clang-format cider-eval-sexp-fu auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile all-the-icons-dired aggressive-indent adaptive-wrap ace-jump-helm-line ac-ispell))))
