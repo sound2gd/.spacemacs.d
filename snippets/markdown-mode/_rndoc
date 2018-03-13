@@ -1,0 +1,23 @@
+# -*- mode: markdown-mode -*-
+# name: _rndoc
+# key: _rndoc
+# --
+
+---
+id: $0
+title: $1
+---
+
+## 起源
+
+## 属性
+
+## 实例
+
+```react
+```
+
+效果图1:
+![效果图](/docs/assets/slider1.png)
+
+效果图2:
