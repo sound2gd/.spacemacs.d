@@ -60,7 +60,7 @@
     ;; 复制剪切板数据到临时文件
     (call-process-shell-command (format "/usr/local/bin/pngpaste %s" absolute-file-name))
     (call-process-shell-command (format "/usr/local/bin/qshell fput blog %s %s" filename absolute-file-name))
-    (insert (format "![](http://7xox4k.com1.z0.glb.clouddn.com/%s)" filename))
+    (insert (format "![](http://7xox4k.com1.z0.glb.clouddn.com/%s?watermark/2/text/U291bmQyZ2TnmoTljZrlrqIK/font/5Lu_5a6L/fontsize/320/fill/IzEzMjRFQg==/dissolve/60/gravity/SouthEast/dx/0/dy/-10)" filename))
     ))
 
 (defun md-dnd-func (event)
@@ -86,7 +86,7 @@
       (call-process-shell-command (format "cp %s %s" fname localFileDir))
       (call-process-shell-command (format "/usr/local/bin/qshell fput blog %s %s"
                                           realFilename (concat localFileDir name)))
-      (insert (format "![](http://7xox4k.com1.z0.glb.clouddn.com/%s)" realFilename))
+      (insert (format "![](http://7xox4k.com1.z0.glb.clouddn.com/%s?watermark/2/text/U291bmQyZ2TnmoTljZrlrqIK/font/5Lu_5a6L/fontsize/320/fill/IzEzMjRFQg==/dissolve/60/gravity/SouthEast/dx/0/dy/-10)" realFilename))
       (beginning-of-line)
       (forward-char 2))
      ;; regular drag and drop on file
