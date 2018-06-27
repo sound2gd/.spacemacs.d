@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: shouldComponentUpdate
+# key: sho
+# --
+shouldComponentUpdate(nextProps, nextState) {
+  $1
+  return true;
+}

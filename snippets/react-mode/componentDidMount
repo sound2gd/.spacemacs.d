@@ -1,0 +1,7 @@
+# -*- mode: react-mode -*-
+# name: componentDidMount
+# key: com
+# --
+componentDidMount() {
+  $0
+}

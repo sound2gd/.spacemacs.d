@@ -15,3 +15,10 @@
 (define-key evil-visual-state-map (kbd "S-D") 'evil-multiedit-match-and-prev)
 (define-key evil-visual-state-map (kbd "S-M-D") 'evil-multiedit-restore)
 (define-key evil-normal-state-map (kbd "zz") 'evil-toggle-fold)
+
+;; 高亮当前光标下的东东
+(spacemacs/set-leader-keys
+  (kbd "hh") 'highlight-symbol-at-point
+  (kbd "hc") 'hi-lock-unface-buffer
+  ;; 有道词典查询
+  (kbd "oy") 'youdao-dictionary-search-at-point+)

@@ -67,6 +67,7 @@ values."
      (typescript :variables
                  typescript-fmt-on-save nil
                  typescript-fmt-tool 'typescript-formatter)
+     racket
      emacs-lisp
      (clojure :variables clojure-enable-fancify-symbols t)
      (c-c++ :variables
@@ -101,6 +102,7 @@ values."
                                       zenburn-theme
                                       doom-themes
                                       nord-theme
+                                      nimbus-theme
                                       ssass-mode
                                       stylus-mode
                                       all-the-icons
