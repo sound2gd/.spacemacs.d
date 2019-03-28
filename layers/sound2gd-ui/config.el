@@ -52,4 +52,12 @@
 (ad-activate 'linum-on)
 
 ;; 进入任何编程mode的时候都打开文件行
-(add-hook 'prog-mode-hook 'linum-mode)
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+
+(custom-set-faces
+  '(diff-hl-change ((t (:background "#da8548" :foreground "#da8548"))))
+  '(diff-hl-delete ((t (:background "#e45649" :foreground "#e45649"))))
+  '(diff-hl-insert ((t (:background "#50a14f" :foreground "#50a14f"))))
+  )
+
+;; (doom-themes-treemacs-config)

@@ -16,6 +16,13 @@
 (define-key evil-visual-state-map (kbd "S-M-D") 'evil-multiedit-restore)
 (define-key evil-normal-state-map (kbd "zz") 'evil-toggle-fold)
 
+(define-key evil-normal-state-map (kbd "s-=") 'text-scale-increase)
+(define-key evil-visual-state-map (kbd "s-=") 'text-scale-increase)
+(define-key evil-insert-state-map (kbd "s-=") 'text-scale-increase)
+(define-key evil-normal-state-map (kbd "s--") 'text-scale-decrease)
+(define-key evil-visual-state-map (kbd "s--") 'text-scale-decrease)
+(define-key evil-insert-state-map (kbd "s--") 'text-scale-decrease)
+
 ;; 高亮当前光标下的东东
 (spacemacs/set-leader-keys
   (kbd "hh") 'highlight-symbol-at-point

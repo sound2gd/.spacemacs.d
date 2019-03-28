@@ -26,6 +26,12 @@
       (buffer-substring-no-properties $p1 $p2)
       )))
 
+(defun sound2gd/totp ()
+  (interactive)
+  (if-let (code (shell-command-to-string "totp 86 seen_03e28d078eb2462e52141d0d3fac6376"))
+    (message "%s" (kill-new code))
+    (message "unknown error!")))
+
 (defun sound2gd/open-file-at-cursor ()
   "打开光标下的文件"
   (interactive)
@@ -60,7 +66,7 @@
     ;; 复制剪切板数据到临时文件
     (call-process-shell-command (format "/usr/local/bin/pngpaste %s" absolute-file-name))
     (call-process-shell-command (format "/usr/local/bin/qshell fput blog %s %s" filename absolute-file-name))
-    (insert (format "![](http://7xox4k.com1.z0.glb.clouddn.com/%s)" filename))
+    (insert (format "![](http://img.sound2gd.wang/%s?watermark/2/text/U291bmQyZ2TnmoTljZrlrqIK/font/5Lu_5a6L/fontsize/320/fill/IzEzMjRFQg==/dissolve/60/gravity/SouthEast/dx/0/dy/-10)" filename))
     ))
 
 (defun md-dnd-func (event)
@@ -86,7 +92,7 @@
       (call-process-shell-command (format "cp %s %s" fname localFileDir))
       (call-process-shell-command (format "/usr/local/bin/qshell fput blog %s %s"
                                           realFilename (concat localFileDir name)))
-      (insert (format "![](http://7xox4k.com1.z0.glb.clouddn.com/%s)" realFilename))
+       (insert (format "![](http://img.sound2gd.wang/%s?watermark/2/text/U291bmQyZ2TnmoTljZrlrqIK/font/5Lu_5a6L/fontsize/320/fill/IzEzMjRFQg==/dissolve/60/gravity/SouthEast/dx/0/dy/-10)" realFilename))
       (beginning-of-line)
       (forward-char 2))
      ;; regular drag and drop on file
