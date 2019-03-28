@@ -36,7 +36,8 @@
 
 (defun sound2gd-org/post-init-org-bullets ()
   ;; 设置org-header的bullet
-  (setq org-bullets-bullet-list '("☰" "☷" "☯" "☭")))
+  ;; (setq org-bullets-bullet-list '("☰" "☷" "☯" "☭"))
+  )
 
 (defun sound2gd-org/post-init-org-pomodoro ()
   (progn

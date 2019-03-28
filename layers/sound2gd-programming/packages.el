@@ -35,13 +35,13 @@
     company
     nodejs-repl
     ;; nodejs-repl-eval
-    tagedit
+    ;; tagedit
     js2-mode
     js-doc
     json-mode
     css-mode
     web-mode
-    editorconfig
+    ;; editorconfig
     ))
 
 (defun sound2gd-programming/post-init-js2-mode ()
@@ -60,7 +60,7 @@
     (spacemacs/set-leader-keys-for-major-mode 'js2-mode
       "tb" 'sound2gd/company-toggle-company-tern)
 
-    (add-hook 'js2-mode-hook 'sound2gd//js2-mode-hook)
+    ;; (add-hook 'js2-mode-hook 'sound2gd//js2-mode-hook)
 
     ;; add your own keywords highlight here
     (font-lock-add-keywords 'js2-mode
@@ -125,14 +125,14 @@
         js-doc-url "http://sound2gd.wang"
         js-doc-license "MIT"))
 
-(defun sound2gd-programming/init-editorconfig ()
-  (use-package editorconfig
-    :init
-    (progn
-      (defun conditional-enable-editorconfig ()
-        (if (locate-dominating-file default-directory ".editorconfig")
-            (editorconfig-apply)))
-      (add-hook 'prog-mode-hook 'conditional-enable-editorconfig))))
+;; (defun sound2gd-programming/init-editorconfig ()
+;;   (use-package editorconfig
+;;     :init
+;;     (progn
+;;       (defun conditional-enable-editorconfig ()
+;;         (if (locate-dominating-file default-directory ".editorconfig")
+;;             (editorconfig-apply)))
+;;       (add-hook 'prog-mode-hook 'conditional-enable-editorconfig))))
 
 (defun sound2gd-programming/post-init-web-mode ()
   (with-eval-after-load "web-mode"
@@ -169,11 +169,11 @@
                 (setq imenu-create-index-function 'css-imenu-make-index)))))
 
 
-(defun sound2gd-programming/init-tagedit ()
-  (use-package tagedit))
+;; (defun sound2gd-programming/init-tagedit ()
+;;   (use-package tagedit))
 
-(defun sound2gd-programming/post-init-tagedit ()
-  (add-hook 'web-mode-hook (lambda () (tagedit-mode 1))))
+;; (defun sound2gd-programming/post-init-tagedit ()
+;;   (add-hook 'web-mode-hook (lambda () (tagedit-mode 1))))
 
 ;; (defun sound2gd-programming/init-nodejs-repl-eval ()
 ;;   (use-package nodejs-repl-eval
