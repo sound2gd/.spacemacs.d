@@ -59,7 +59,7 @@ values."
          org-want-todo-bindings t
          org-enable-reveal-js-support t
          org-projectile-file "/Users/cris/Dropbox/gtd/gtd.org")
-       ;; yaml
+       yaml
        react
        (python :variables
          python-test-runner '(nose pytest))
@@ -90,9 +90,13 @@ values."
        (version-control :variables
          version-control-diff-tool 'diff-hl
          version-control-diff-side 'left)
+       ;; lsp
        (haskell :variables ;; Or optionally just haskell without the variables.
-         haskell-completion-backend 'ghci
-         haskell-process-type 'stack-ghci)
+         haskell-completion-backend 'intero
+         haskell-enable-hindent-style "johan-tibell"
+         ;; haskell-completion-backend 'ghci
+         ;; haskell-process-type 'stack-ghci
+         )
        (scala :variables
          scala-indent:use-javadoc-style t
          scala-use-java-doc-style t
@@ -426,8 +430,10 @@ values."
   (setq racer-rust-src-path "/Users/cris/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src")
   (setq ensime-startup-notification nil)
 
-  (require 'lsp-haskell)
-  (add-hook 'haskell-mode-hook #'lsp-haskell-enable)
+  (add-to-list 'exec-path "~/.local/bin/")
+  ;; (setq lsp-haskell-process-path-hie "hie-wrapper")
+  ;; (require 'lsp-haskell)
+  ;; (add-hook 'haskell-mode-hook #'lsp)
   ;; (define-minor-mode
   ;;   shadowsocks-proxy-mode
   ;;   :global t
