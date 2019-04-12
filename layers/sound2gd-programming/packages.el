@@ -32,17 +32,36 @@
 ;; 这个layer主要放置和编程有关的配置
 (defconst sound2gd-programming-packages
   '(cider
-    company
-    nodejs-repl
-    ;; nodejs-repl-eval
-    ;; tagedit
-    js2-mode
-    js-doc
-    json-mode
-    css-mode
-    web-mode
-    ;; editorconfig
-    ))
+     company
+     nodejs-repl
+     ;; nodejs-repl-eval
+     ;; tagedit
+     js2-mode
+     js-doc
+     json-mode
+     css-mode
+     web-mode
+     ;; editorconfig
+     intero
+     ))
+
+(defun sound2gd-programming/post-init-intero ()
+  (message "post init-intero start...")
+
+  (defun intero-eval-paragraph ()
+    (evil-a-paragraph)
+    (intero-repl-eval-region))
+
+  (dolist (mode haskell-modes)
+    ;; 设置haskell模式下的执行快捷键
+    (spacemacs/set-leader-keys-for-major-mode mode
+      "er" 'intero-repl-eval-region
+      "ef" 'intero-eval-paragraph
+      "eb" 'intero-repl-load
+      )
+    )
+  (message "post init-intero done!")
+  )
 
 (defun sound2gd-programming/post-init-js2-mode ()
   (progn
@@ -53,7 +72,7 @@
     (add-hook 'spacemacs-jump-handlers-js2-mode 'etags-select-find-tag-at-point)
 
     (setq company-backends-js2-mode '((company-dabbrev-code :with company-keywords company-etags)
-                                      company-files company-dabbrev))
+                                       company-files company-dabbrev))
 
     (sound2gd|toggle-company-backends company-tern)
 
@@ -64,7 +83,7 @@
 
     ;; add your own keywords highlight here
     (font-lock-add-keywords 'js2-mode
-                            '(("\\<\\(cc\\)\\>" 1 font-lock-type-face)))
+      '(("\\<\\(cc\\)\\>" 1 font-lock-type-face)))
 
     (spacemacs/declare-prefix-for-mode 'js2-mode "ms" "repl")
 
@@ -121,9 +140,9 @@
 
 (defun sound2gd-programming/post-init-js-doc ()
   (setq js-doc-mail-address "wanghuan@tuya.com"
-        js-doc-author (format "Sound2gd <%s>" js-doc-mail-address)
-        js-doc-url "http://sound2gd.wang"
-        js-doc-license "MIT"))
+    js-doc-author (format "Sound2gd <%s>" js-doc-mail-address)
+    js-doc-url "http://sound2gd.wang"
+    js-doc-license "MIT"))
 
 ;; (defun sound2gd-programming/init-editorconfig ()
 ;;   (use-package editorconfig
@@ -139,9 +158,9 @@
     (web-mode-toggle-current-element-highlight)
     (web-mode-dom-errors-show))
   (setq company-backends-web-mode '((company-dabbrev-code
-                                     company-keywords
-                                     company-etags)
-                                    company-files company-dabbrev)))
+                                      company-keywords
+                                      company-etags)
+                                     company-files company-dabbrev)))
 
 (defun sound2gd-programming/init-nodejs-repl ()
   (use-package nodejs-repl
@@ -165,8 +184,8 @@
         (imenu--generic-function '((nil "^ *\\([^ ]+\\) *{ *$" 1)))))
 
     (add-hook 'css-mode-hook
-              (lambda ()
-                (setq imenu-create-index-function 'css-imenu-make-index)))))
+      (lambda ()
+        (setq imenu-create-index-function 'css-imenu-make-index)))))
 
 
 ;; (defun sound2gd-programming/init-tagedit ()
@@ -192,7 +211,7 @@
 (defun sound2gd-programming/post-init-company ()
   (progn
     (setq company-minimum-prefix-length 1
-          company-idle-delay 0.08)
+      company-idle-delay 0.08)
 
     (when (configuration-layer/package-usedp 'company)
       (spacemacs|add-company-backends :modes shell-script-mode sh-mode nxml-mode conf-unix-mode json-mode ))
