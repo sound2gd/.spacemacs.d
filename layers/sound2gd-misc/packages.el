@@ -33,6 +33,7 @@
 (defconst sound2gd-misc-packages
   '(ranger
      ;; neotree
+     helm
      all-the-icons
      treemacs
      dired-narrow))
@@ -41,9 +42,14 @@
   (use-package all-the-icons))
 
 (defun sound2gd-misc/post-init-treemacs ()
-  (require 'all-the-icons)
-  (require 'doom-themes)
-  (doom-themes-treemacs-config))
+  (message "执行了post-init-treemacs")
+  ;; (require 'all-the-icons)
+  ;; (require 'doom-themes)
+  ;; (doom-themes-treemacs-config)
+  )
+
+(defun sound2gd-misc/post-init-helm ()
+  )
 
 ;; (defun sound2gd-misc/init-neotree ()
 ;;   (use-package neotree

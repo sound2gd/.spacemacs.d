@@ -85,6 +85,7 @@ values."
        ;;           treemacs-use-collapsed-directories 10
        ;;           treemacs-use-follow-mode nil
        ;;           treemacs-use-filewatch-mode nil)
+       ;; (neotree)
        rust
        sound2gd
        (version-control :variables
@@ -110,6 +111,7 @@ values."
     ;; packages, then consider creating a layer. You can also put the
     ;; configuration in `dotspacemacs/user-config'.
     dotspacemacs-additional-packages '(obsidian-theme
+                                        gruvbox-theme
                                         material-theme
                                         zenburn-theme
                                         doom-themes
@@ -206,7 +208,7 @@ values."
     ;; List of themes, the first of the list is loaded when spacemacs starts.
     ;; Press <SPC> T n to cycle to the next theme in the list (works great
     ;; with 2 themes variants, one dark and one light)
-    dotspacemacs-themes '(spacemacs-dark)
+    dotspacemacs-themes '(gruvbox spacemacs-dark)
     ;; If non nil the cursor color matches the state color in GUI Emacs.
     dotspacemacs-colorize-cursor-according-to-state t
     ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
@@ -454,28 +456,14 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(display-time-mode t)
- '(evil-want-Y-yank-to-eol t)
- '(global-diff-hl-mode t)
-  '(hl-todo-keyword-faces
-     '(("TODO" . "#dc752f")
-        ("NEXT" . "#dc752f")
-        ("THEM" . "#2d9574")
-        ("PROG" . "#4f97d7")
-        ("OKAY" . "#4f97d7")
-        ("DONT" . "#f2241f")
-        ("FAIL" . "#f2241f")
-        ("DONE" . "#86dc2f")
-        ("NOTE" . "#b1951d")
-        ("KLUDGE" . "#b1951d")
-        ("HACK" . "#b1951d")
-        ("TEMP" . "#b1951d")
-        ("FIXME" . "#dc752f")
-        ("XXX" . "#dc752f")
-        ("XXXX" . "#dc752f")
-        ("???" . "#dc752f")))
-  '(package-selected-packages
-     '(doom-themes zenburn-theme youdao-dictionary yasnippet-snippets yapfify xterm-color ws-butler winum which-key web-mode web-beautify volatile-highlights vmd-mode vi-tilde-fringe uuidgen use-package unfill toml-mode toc-org tide tagedit symon stylus-mode string-inflection ssass-mode spaceline-all-the-icons smeargle slim-mode shell-pop scss-mode sass-mode rjsx-mode reveal-in-osx-finder restart-emacs ranger rainbow-mode rainbow-identifiers rainbow-delimiters racer pyvenv pytest pyenv-mode py-isort pug-mode prettier-js popwin pippel pipenv pip-requirements persp-mode pcre2el password-generator paradox ox-reveal overseer osx-trash osx-dictionary origami orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file obsidian-theme ob-elixir nord-theme nodejs-repl nimbus-theme neotree nameless mwim multi-term move-text mmm-mode material-theme markdown-toc magit-svn magit-gitflow macrostep lsp-haskell lorem-ipsum livid-mode live-py-mode link-hint launchctl json-navigator json-mode js2-refactor js-doc intero indent-guide importmagic impatient-mode ibuffer-projectile hungry-delete hlint-refactor hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-rtags helm-pydoc helm-purpose helm-projectile helm-mode-manager helm-make helm-hoogle helm-gitignore helm-git-grep helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag haskell-snippets google-translate google-c-style golden-ratio godoctor go-tag go-rename go-impl go-guru go-gen-test go-fill-struct go-eldoc gnuplot gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md gandalf-theme fuzzy font-lock+ flycheck-mix flycheck-credo flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav editorconfig dumb-jump dotenv-mode doom-modeline disaster dired-narrow diminish dante cython-mode counsel-projectile company-web company-tern company-statistics company-rtags company-go company-ghci company-ghc company-cabal company-c-headers company-anaconda column-enforce-mode color-identifiers-mode cmm-mode clojure-snippets clojure-cheatsheet clj-refactor clean-aindent-mode clang-format cider-eval-sexp-fu centered-cursor-mode cargo carbon-now-sh auto-yasnippet auto-highlight-symbol auto-compile alchemist aggressive-indent adoc-mode ace-window ace-link ace-jump-helm-line ac-ispell))
- '(pdf-view-midnight-colors '("#b2b2b2" . "#292b2e"))
- '(treemacs-fringe-indicator-mode t))
+ '(package-selected-packages
+   '(yaml-mode gruvbox-theme autothemer zenburn-theme youdao-dictionary yasnippet-snippets yapfify xterm-color ws-butler winum which-key web-mode web-beautify volatile-highlights vmd-mode vi-tilde-fringe uuidgen use-package unfill toml-mode toc-org tide tagedit symon stylus-mode string-inflection ssass-mode spaceline-all-the-icons smeargle slim-mode shell-pop scss-mode sass-mode rjsx-mode reveal-in-osx-finder restart-emacs ranger rainbow-mode rainbow-identifiers rainbow-delimiters racer pyvenv pytest pyenv-mode py-isort pug-mode prettier-js popwin pippel pipenv pip-requirements persp-mode pcre2el password-generator paradox ox-reveal overseer osx-trash osx-dictionary origami orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file obsidian-theme ob-elixir nord-theme noflet nodejs-repl nimbus-theme neotree nameless mwim mvn multi-term move-text mmm-mode meghanada maven-test-mode material-theme markdown-toc magit-svn magit-gitflow macrostep lsp-haskell lorem-ipsum livid-mode live-py-mode link-hint launchctl json-navigator json-mode js2-refactor js-doc intero indent-guide importmagic impatient-mode ibuffer-projectile hungry-delete hlint-refactor hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-rtags helm-pydoc helm-purpose helm-projectile helm-org-rifle helm-mode-manager helm-make helm-hoogle helm-gitignore helm-git-grep helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag haskell-snippets groovy-mode groovy-imports gradle-mode google-translate google-c-style golden-ratio godoctor go-tag go-rename go-impl go-guru go-gen-test go-fill-struct go-eldoc gnuplot gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gh-md gandalf-theme fuzzy font-lock+ flycheck-mix flycheck-credo flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-nerd-commenter evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eshell-z eshell-prompt-extras esh-help ensime emmet-mode elisp-slime-nav editorconfig dumb-jump dotenv-mode doom-themes doom-modeline disaster dired-narrow diminish diff-hl dante cython-mode counsel-projectile company-web company-tern company-statistics company-rtags company-go company-ghci company-ghc company-emacs-eclim company-cabal company-c-headers company-anaconda column-enforce-mode color-identifiers-mode cmm-mode clojure-snippets clojure-cheatsheet clean-aindent-mode clang-format cider-eval-sexp-fu centered-cursor-mode cargo carbon-now-sh browse-at-remote auto-yasnippet auto-highlight-symbol auto-compile alchemist aggressive-indent adoc-mode ace-window ace-link ace-jump-helm-line ac-ispell)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(diff-hl-change ((t (:background "#da8548" :foreground "#da8548"))))
+ '(diff-hl-delete ((t (:background "#e45649" :foreground "#e45649"))))
+ '(diff-hl-insert ((t (:background "#50a14f" :foreground "#50a14f")))))
 )
