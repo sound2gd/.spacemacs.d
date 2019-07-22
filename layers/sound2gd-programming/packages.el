@@ -33,7 +33,7 @@
 (defconst sound2gd-programming-packages
   '(cider
      company
-     nodejs-repl
+     ;; nodejs-repl
      ;; nodejs-repl-eval
      ;; tagedit
      js2-mode
@@ -162,10 +162,10 @@
                                       company-etags)
                                      company-files company-dabbrev)))
 
-(defun sound2gd-programming/init-nodejs-repl ()
-  (use-package nodejs-repl
-    :init
-    :defer t))
+;; (defun sound2gd-programming/init-nodejs-repl ()
+;;   (use-package nodejs-repl
+;;     :init
+;;     :defer t))
 
 (defun sound2gd-programming/post-init-json-mode ()
   (add-to-list 'auto-mode-alist '("\\.tern-project\\'" . json-mode))
