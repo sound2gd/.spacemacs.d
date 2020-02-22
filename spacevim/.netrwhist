@@ -1,3 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/Users/cris/.SpaceVim.d'
+let g:netrw_dirhist_2='/Users/cris/.spacemacs.d/spacevim'
+let g:netrw_dirhist_3='/Users/cris/code/ant'
+let g:netrw_dirhist_4='/Users/cris/code/ant/playground'
+let g:netrw_dirhist_5='/Users/cris/code/ant/playground/tool-rs'
+let g:netrw_dirhist_6='/Users/cris/code/ant/playground/tool-rs/src'
+let g:netrw_dirhist_7='/Users/cris/code/ant/playground/tool-rs/src/controller'
+let g:netrw_dirhist_8='/Users/cris/code/ant/playground/assetflux-conf/asset-flux-config'

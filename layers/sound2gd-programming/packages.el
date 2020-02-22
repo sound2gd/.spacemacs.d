@@ -43,6 +43,7 @@
      web-mode
      ;; editorconfig
      intero
+     clojure-mode
      ))
 
 (defun sound2gd-programming/post-init-intero ()
@@ -61,6 +62,29 @@
       )
     )
   (message "post init-intero done!")
+  )
+(defun sound2gd-programming/post-init-cider ()
+  (message "post init cider...")
+
+  (defun sound2gd/nsreload ()
+    (interactive)
+    (cider-nrepl-sync-request:eval "(user/restart)")))
+
+(defun sound2gd-programming/post-init-clojure-mode ()
+  ;; (message "creating new clj buffer...")
+
+  ;; (defun nrepl-reset ()
+  ;;   (interactive)
+  ;;   (set-buffer "*nrepl*")
+  ;;   (goto-char (point-max))
+  ;;   (insert "(user/restart)\n")
+  ;;   (nrepl-return))
+
+  ;; (let ((buffer (generate-new-buffer "clj-scratch")))
+  ;;   (with-current-buffer buffer
+  ;;     (clojure-mode)
+  ;;     (message "created a clj scratch buffer~ have fun~")
+  ;;     ))
   )
 
 (defun sound2gd-programming/post-init-js2-mode ()

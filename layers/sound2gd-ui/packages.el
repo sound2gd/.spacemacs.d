@@ -33,7 +33,7 @@
   '(
     centaur-tabs
     doom-themes
-    ;; (snails :location (recipe :fetcher github :repo "manateelazycat/snails"))
+    (snails :location (recipe :fetcher github :repo "manateelazycat/snails"))
     ;; (awesome-tab :location (local "/Users/cris/.spacemacs.d/private/awesome-tab"))
     )
   "The list of Lisp packages required by the sound2gd-ui layer.
@@ -67,6 +67,7 @@ Each entry is either:
 ;;   (use-package snails
 ;;     :ensure t
 ;;     ))
+
 (defun sound2gd-ui/init-doom-themes ()
   (use-package doom-themes
     :ensure t
@@ -86,71 +87,71 @@ Each entry is either:
 (defun sound2gd-ui/post-init-doom-themes ()
   (doom-modeline-mode t))
 
-(defun sound2gd-ui/post-init-centaur-tabs ()
-  (centaur-tabs-mode t))
+;; (defun sound2gd-ui/post-init-centaur-tabs ()
+;;   (centaur-tabs-mode t))
 
-(defun sound2gd-ui/init-centaur-tabs ()
-  (use-package centaur-tabs
-    :ensure t
-    :config
-    (progn
-      (setq centaur-tabs-style "wave")
-      ;; (setq centaur-tabs-height 32)
-      (setq centaur-tabs-set-icons t)
-      ;; (setq centaur-tabs-set-bar 'over)
-      (setq centaur-tabs-set-modified-marker t)
-      (centaur-tabs-headline-match)
-      (defun centaur-tabs-buffer-groups ()
-        "`centaur-tabs-buffer-groups' control buffers' group rules.
+;; (defun sound2gd-ui/init-centaur-tabs ()
+;;   (use-package centaur-tabs
+;;     :ensure t
+;;     :config
+;;     (progn
+;;       (setq centaur-tabs-style "wave")
+;;       ;; (setq centaur-tabs-height 32)
+;;       (setq centaur-tabs-set-icons t)
+;;       ;; (setq centaur-tabs-set-bar 'over)
+;;       (setq centaur-tabs-set-modified-marker t)
+;;       (centaur-tabs-headline-match)
+;;       (defun centaur-tabs-buffer-groups ()
+;;         "`centaur-tabs-buffer-groups' control buffers' group rules.
 
- Group centaur-tabs with mode if buffer is derived from `eshell-mode' `emacs-lisp-mode' `dired-mode' `org-mode' `magit-mode'.
- All buffer name start with * will group to \"Emacs\".
- Other buffer group by `centaur-tabs-get-group-name' with project name."
-        (list
-         (cond
-          ((or (string-equal "*" (substring (buffer-name) 0 1))
-               (memq major-mode '(magit-process-mode
-                                  magit-status-mode
-                                  magit-diff-mode
-                                  magit-log-mode
-                                  magit-file-mode
-                                  magit-blob-mode
-                                  magit-blame-mode
-                                  )))
-           "Emacs")
-          ((derived-mode-p 'prog-mode)
-           "Editing")
-          ((derived-mode-p 'dired-mode)
-           "Dired")
-          ((memq major-mode '(helpful-mode
-                              help-mode))
-           "Help")
-          ((memq major-mode '(org-mode
-                              org-agenda-clockreport-mode
-                              org-src-mode
-                              org-agenda-mode
-                              org-beamer-mode
-                              org-indent-mode
-                              org-bullets-mode
-                              org-cdlatex-mode
-                              org-agenda-log-mode
-                              diary-mode))
-           "OrgMode")
-          (t
-           (centaur-tabs-get-group-name (current-buffer))))))
-      )
-    :bind
-    (:map evil-normal-state-map
-          ("g t" . centaur-tabs-forward)
-          ("g T" . centaur-tabs-backward))
-    ("C-c t" . centaur-tabs-counsel-switch-group)
-    :hook
-    (dashboard-mode . centaur-tabs-local-mode)
-    (term-mode . centaur-tabs-local-mode)
-    (calendar-mode . centaur-tabs-local-mode)
-    (org-agenda-mode . centaur-tabs-local-mode)
-    (helpful-mode . centaur-tabs-local-mode)
-    )
-  )
+;;  Group centaur-tabs with mode if buffer is derived from `eshell-mode' `emacs-lisp-mode' `dired-mode' `org-mode' `magit-mode'.
+;;  All buffer name start with * will group to \"Emacs\".
+;;  Other buffer group by `centaur-tabs-get-group-name' with project name."
+;;         (list
+;;          (cond
+;;           ((or (string-equal "*" (substring (buffer-name) 0 1))
+;;                (memq major-mode '(magit-process-mode
+;;                                   magit-status-mode
+;;                                   magit-diff-mode
+;;                                   magit-log-mode
+;;                                   magit-file-mode
+;;                                   magit-blob-mode
+;;                                   magit-blame-mode
+;;                                   )))
+;;            "Emacs")
+;;           ((derived-mode-p 'prog-mode)
+;;            "Editing")
+;;           ((derived-mode-p 'dired-mode)
+;;            "Dired")
+;;           ((memq major-mode '(helpful-mode
+;;                               help-mode))
+;;            "Help")
+;;           ((memq major-mode '(org-mode
+;;                               org-agenda-clockreport-mode
+;;                               org-src-mode
+;;                               org-agenda-mode
+;;                               org-beamer-mode
+;;                               org-indent-mode
+;;                               org-bullets-mode
+;;                               org-cdlatex-mode
+;;                               org-agenda-log-mode
+;;                               diary-mode))
+;;            "OrgMode")
+;;           (t
+;;            (centaur-tabs-get-group-name (current-buffer))))))
+;;       )
+;;     :bind
+;;     (:map evil-normal-state-map
+;;           ("g t" . centaur-tabs-forward)
+;;           ("g T" . centaur-tabs-backward))
+;;     ("C-c t" . centaur-tabs-counsel-switch-group)
+;;     :hook
+;;     (dashboard-mode . centaur-tabs-local-mode)
+;;     (term-mode . centaur-tabs-local-mode)
+;;     (calendar-mode . centaur-tabs-local-mode)
+;;     (org-agenda-mode . centaur-tabs-local-mode)
+;;     (helpful-mode . centaur-tabs-local-mode)
+;;     )
+;;   )
 
 ;;; packages.el ends here
