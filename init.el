@@ -66,9 +66,9 @@ values."
      lua
      html
      javascript
-     (typescript :variables
-                 typescript-fmt-on-save nil
-                 typescript-fmt-tool 'typescript-formatter)
+     ;; (typescript :variables
+     ;;             typescript-fmt-on-save nil
+     ;;             typescript-fmt-tool 'typescript-formatter)
      ;; racket
      emacs-lisp
      (clojure :variables
@@ -80,7 +80,7 @@ values."
      (chinese :packages youdao-dictionary fcitx
               :variables chinese-enable-fcitx nil
               chinese-enable-youdao-dict t)
-     go
+     (go :variables go-backend 'lsp)
      elixir
      asciidoc
      ;; (treemacs :variables
@@ -90,15 +90,20 @@ values."
      ;; (neotree)
      (rust :variables rust-backend 'lsp)
      ;; dap
+     (spacemacs-modeline)
      sound2gd
      (version-control :variables
                       version-control-diff-tool 'diff-hl
                       version-control-diff-side 'left)
-     lsp
+     (lsp :variables lsp-rust-server 'rust-analyzer)
      (haskell :variables ;; Or optionally just haskell without the variables.
               haskell-completion-backend 'ghci
               haskell-process-type 'stack-ghci)
      (java :variables java-backend 'lsp)
+     (typescript :variables
+                 typescript-backend 'lsp
+                 typescript-lsp-linter nil
+                 typescript-fmt-tool 'prettier)
                                         ; (haskell :variables ;; Or optionally just haskell without the variables.
                                         ; haskell-completion-backend 'intero
                                         ; haskell-enable-hindent-style "johan-tibell"
@@ -128,6 +133,7 @@ values."
                                       gandalf-theme
                                       srcery-theme
                                       doom-themes
+                                      doom-modeline
                                       ;; all-the-icons
                                       ;; all-the-icons-dired
                                       string-inflection
@@ -216,7 +222,7 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark srcery gruvbox)
+   dotspacemacs-themes '(doom-horizon spacemacs-dark srcery gruvbox)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
@@ -378,12 +384,14 @@ values."
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
    dotspacemacs-whitespace-cleanup 'changed
+
+   dotspacemacs-mode-line-theme 'doom
    ))
 (defun dotspacemacs/user-init ()
-  (setq configuration-layer-elpa-archives
-        '(("melpa-cn" . "https://elpa.emacs-china.org/melpa/")
-          ("org-cn"   . "https://elpa.emacs-china.org/org/")
-          ("gnu-cn"   . "https://elpa.emacs-china.org/gnu/")))
+  ;; (setq configuration-layer-elpa-archives
+  ;;      '(("melpa-cn" . "http://elpa.emacs-china.org/melpa/")
+  ;;        ("org-cn"   . "http://elpa.emacs-china.org/org/")
+  ;;        ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")))
 
   ;; https://github.com/syl20bnr/spacemacs/issues/2705
   ;; (setq tramp-mode nil)
@@ -458,7 +466,7 @@ This function is called at the very end of Spacemacs initialization."
    ;; If you edit it by hand, you could mess it up, so be careful.
    ;; Your init file should contain only one such instance.
    ;; If there is more than one, they won't work right.
-   '(centaur-tabs-mode t nil (centaur-tabs))
+   ;; '(centaur-tabs-mode t nil (centaur-tabs))
    '(evil-want-Y-yank-to-eol t)
    '(hl-todo-keyword-faces
      '(("TODO" . "#dc752f")

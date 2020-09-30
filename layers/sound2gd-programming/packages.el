@@ -44,6 +44,7 @@
      ;; editorconfig
      intero
      clojure-mode
+     (rust-mode :requires lsp-mode)
      ))
 
 (defun sound2gd-programming/post-init-intero ()
@@ -248,6 +249,17 @@
   "在cider包加载完成之后，修复deps.edn依赖问题"
   (message "执行了post-init-cider")
   (add-hook 'cider-mode-hook #'sound2gd/fix-clj-edn-deps))
+
+
+;; =========================================================
+;; rust相关
+;; =========================================================
+(defun sound2gd-programming/post-init-rust-mode ()
+  (message "执行了post-init-rust-mode")
+  (spacemacs/set-leader-keys-for-major-mode 'rust-mode
+    "gg" #'lsp-find-definition)
+  )
+
 
 ;; =========================================================
 ;;; packages.el ends here
