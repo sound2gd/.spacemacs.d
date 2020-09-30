@@ -82,9 +82,9 @@ Each entry is either:
 ;;       (doom-themes-neotree-config)
 ;;       )))
 
-(defun sound2gd-ui/post-init-doom-themes ()
-  (message "post init doom themes")
-  (load-theme 'doom-horizon))
+;;(defun sound2gd-ui/post-init-doom-themes ()
+;;  (message "post init doom themes")
+;;  (load-theme 'doom-horizon))
 
 
 ;; (defun sound2gd-ui/init-doom-modeline ()
@@ -96,7 +96,6 @@ Each entry is either:
 ;;   (message "post init doom modeline")
 ;;   (require 'doom-modeline)
 ;;   (doom-modeline-mode t))
-
 ;; (defun sound2gd-ui/post-init-doom-themes ()
 ;;   (doom-modeline-mode t))
 

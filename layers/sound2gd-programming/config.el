@@ -35,3 +35,11 @@
 
 
 (setq nxml-slash-auto-complete-flag t)
+
+
+(when (configuration-layer/layer-used-p 'lsp)
+  (message "sound2gd-config-lsp: idle-delay -> 0.5, read-process-output-max 3M")
+  (setq read-process-output-max (* 3 1024 1024)) ;; 3mb
+  (setq lsp-idle-delay 0.500)
+  (setq lsp-ui-doc-position 'at-point)
+  )
