@@ -80,12 +80,12 @@ Each entry is either:
       (doom-themes-visual-bell-config)
       (doom-themes-neotree-config)
       (message "using doom mode line")
-      (doom-modeline-mode t)
+      ;; (doom-modeline-mode t)
       )))
 
 
-(defun sound2gd-ui/post-init-doom-themes ()
-  (doom-modeline-mode t))
+;; (defun sound2gd-ui/post-init-doom-themes ()
+;;   (doom-modeline-mode t))
 
 ;; (defun sound2gd-ui/post-init-centaur-tabs ()
 ;;   (centaur-tabs-mode t))
