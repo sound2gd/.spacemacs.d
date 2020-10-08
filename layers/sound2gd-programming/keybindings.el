@@ -12,4 +12,5 @@
 (when (configuration-layer/layer-used-p 'lsp)
   (define-key evil-normal-state-map (kbd "gc") 'lsp-ui-doc-focus-frame)
   (define-key evil-normal-state-map (kbd "gv") 'lsp-ui-doc-unfocus-frame)
+  (define-key evil-insert-state-map (kbd "s-p") 'lsp-signature-activate)
   )
