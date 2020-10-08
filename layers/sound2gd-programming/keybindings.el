@@ -3,10 +3,11 @@
   (spacemacs/set-leader-keys-for-major-mode 'elixir-mode
     "si" #'alchemist-iex-project-run
     "el" #'alchemist-iex-send-current-line
-    "eb" #'alchemist-iex-compile-this-buffer-and-go
+    "eb" #'alchemist-iex-compile-this-buffer
     "ef" #'alchemist-iex-send-last-sexp
     "ec" #'alchemist-iex-command
-    "er" #'alchemist-iex-send-region-and-go
+    "er" #'alchemist-iex-send-region
+    "es" #'alchemist-iex-reload-module
     ))
 
 (when (configuration-layer/layer-used-p 'lsp)
