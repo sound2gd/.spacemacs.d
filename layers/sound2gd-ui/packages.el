@@ -31,9 +31,10 @@
 
 (defconst sound2gd-ui-packages
   '(
-    centaur-tabs
+    ;; centaur-tabs
+    ;; doom-modeline
     doom-themes
-    (snails :location (recipe :fetcher github :repo "manateelazycat/snails"))
+    ;; (snails :location (recipe :fetcher github :repo "manateelazycat/snails"))
     ;; (awesome-tab :location (local "/Users/cris/.spacemacs.d/private/awesome-tab"))
     )
   "The list of Lisp packages required by the sound2gd-ui layer.
@@ -68,22 +69,33 @@ Each entry is either:
 ;;     :ensure t
 ;;     ))
 
-(defun sound2gd-ui/init-doom-themes ()
-  (use-package doom-themes
-    :ensure t
-    :config
-    (progn
-      (require 'doom-themes)
-      (setq doom-themes-enable-bold t      ; if nil, bold is universally disabled
-            doom-themes-enable-italic t)   ; if nil, italics is universally disabled
-      (load-theme 'doom-one t)
-      (doom-themes-visual-bell-config)
-      (doom-themes-neotree-config)
-      (message "using doom mode line")
-      ;; (doom-modeline-mode t)
-      )))
+;; (defun sound2gd-ui/init-doom-themes ()
+;;   (use-package doom-themes
+;;     :ensure t
+;;     :config
+;;     (progn
+;;       (require 'doom-themes)
+;;       (setq doom-themes-enable-bold t      ; if nil, bold is universally disabled
+;;             doom-themes-enable-italic t)   ; if nil, italics is universally disabled
+;;       (load-theme 'doom-one t)
+;;       (doom-themes-visual-bell-config)
+;;       (doom-themes-neotree-config)
+;;       )))
+
+;;(defun sound2gd-ui/post-init-doom-themes ()
+;;  (message "post init doom themes")
+;;  (load-theme 'doom-horizon))
 
 
+;; (defun sound2gd-ui/init-doom-modeline ()
+;;   (message "init doom modeline")
+;;   (use-package doom-modeline
+;;     :ensure t))
+
+;; (defun sound2gd-ui/post-init-doom-modeline ()
+;;   (message "post init doom modeline")
+;;   (require 'doom-modeline)
+;;   (doom-modeline-mode t))
 ;; (defun sound2gd-ui/post-init-doom-themes ()
 ;;   (doom-modeline-mode t))
 
