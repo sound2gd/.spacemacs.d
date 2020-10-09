@@ -14,4 +14,9 @@
   (define-key evil-normal-state-map (kbd "gc") 'lsp-ui-doc-focus-frame)
   (define-key evil-normal-state-map (kbd "gv") 'lsp-ui-doc-unfocus-frame)
   (define-key evil-insert-state-map (kbd "s-p") 'lsp-signature-activate)
+
+  (define-key evil-normal-state-map (kbd "M-<f7>") 'lsp-ui-peek-find-references)
+  (define-key evil-insert-state-map (kbd "M-<f7>") 'lsp-ui-peek-find-references)
+  (define-key evil-normal-state-map (kbd "s-b") 'lsp-ui-peek-find-references)
+  (define-key evil-insert-state-map (kbd "s-b") 'lsp-ui-peek-find-references)
   )
