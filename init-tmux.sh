@@ -3,8 +3,8 @@
 work_path=$(dirname $0)
 
 if [ ! -d $HOME/.tmux ];then
-   echo "创建~/.tmux软连接"
    ln -s $work_path/.tmux $HOME/.tmux
    ln -s -f $work_path/.tmux/.tmux.conf $HOME/.tmux.conf
-   cp $work_path/.tmux/.tmux.conf.local $HOME/
+   ln -s $work_path/.tmux.conf.local $HOME/
+   echo "已创建~/.tmux软连接"
 fi
