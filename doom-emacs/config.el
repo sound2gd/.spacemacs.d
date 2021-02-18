@@ -19,8 +19,8 @@
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
 ;; test
-(setq doom-font (font-spec :family "SauceCodePro Nerd Font" :size 18)
-      doom-variable-pitch-font (font-spec :family "SauceCodePro Nerd Font"))
+(setq doom-font (font-spec :family "Fira Code" :size 18)
+      doom-variable-pitch-font (font-spec :family "Fira Code"))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -85,6 +85,11 @@
 ;;         "7" 'winum-select-window-7
 ;;         "8" 'winum-select-window-5
 ;;         "9" 'winum-select-window-9))
+
+(setq user-full-name "Chris"
+      user-mail-address "429354772@qq.com")
+(setq confirm-kill-emacs nil)
+
 (after! winum
   (map! :leader
         "0" 'winum-select-window-0-or-10
@@ -136,7 +141,8 @@
 
 (map! :leader
       "v" 'er/expand-region
-      "cl" 'evilnc-comment-or-uncomment-lines)
+      "cl" 'evilnc-comment-or-uncomment-lines
+      "qq" 'save-buffers-kill-emacs)
 
 (map! :mode elixir-mode
       :localleader
