@@ -20,7 +20,7 @@
 ;; font string. You generally only need these two:
 ;; test
 (setq doom-font (font-spec :family "Fira Code" :size 18)
-      doom-variable-pitch-font (font-spec :family "Fira Code"))
+      doom-variable-pitch-font (font-spec :family "Alegreya"))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -86,9 +86,13 @@
 ;;         "8" 'winum-select-window-5
 ;;         "9" 'winum-select-window-9))
 
-(setq user-full-name "Chris"
-      user-mail-address "429354772@qq.com")
 (setq confirm-kill-emacs nil)
+(setq org-roam-directory "~/Dropbox/gtd/roam")
+
+(let ((alternatives '("chris-emacs.png")))
+  (setq fancy-splash-image
+        (concat doom-private-dir "splash/"
+                (nth (random (length alternatives)) alternatives))))
 
 (after! winum
   (map! :leader
@@ -169,3 +173,18 @@
 (map! :mode json-mode
       :localleader
       "m" #'eqyiel/json-minify)
+
+(setq posframe-arghandler
+      (lambda (buffer-or-name key value)
+        (or (and (eq key :lines-truncate)
+                 (equal ivy-posframe-buffer
+                        (if (stringp buffer-or-name)
+                            buffer-or-name
+                          (buffer-name buffer-or-name)))
+                 t)
+            value)))
+
+(after! lsp-mode
+  (setq read-process-output-max (* 3 1024 1024)) ;; 3mb
+  (setq lsp-idle-delay 0.500)
+  (setq gc-cons-threshold 100000000))
